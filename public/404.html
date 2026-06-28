@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      var pathname = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // Detect if pathname starts with "/Samlara" (GitHub Pages subfolder)
+      var repoName = pathname.startsWith('/Samlara') ? '/Samlara' : '';
+      var subpath = pathname.substring(repoName.length);
+      
+      // Replace with hash-based route
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') +
+        repoName + '/#' + subpath + search + hash
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
